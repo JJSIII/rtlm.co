@@ -10,7 +10,7 @@ $(document).ready(function() {
 		mp4: 'videos/jellyfish.mp4',
 		ogv: 'videos/jellyfish.ogv',
 		webm: 'videos/jellyfish.webm',
-		poster: 'images/<%= yeoman.dist %>jellyfish.jpg',
+		//poster: 'images/jellyfish.jpg',
 		fullscreen: true,
 		scale: false
 	});
