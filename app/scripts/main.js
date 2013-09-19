@@ -6,12 +6,13 @@ $(document).ready(function() {
 	$('.panel-home').videoBG({
 		autoplay: true,
 		position: 'absolute',
-		zIndex: 0,
+		zIndex: -1,
 		mp4: 'videos/jellyfish.mp4',
 		ogv: 'videos/jellyfish.ogv',
 		webm: 'videos/jellyfish.webm',
 		//poster: 'images/jellyfish.jpg',
 		fullscreen: true,
+		//opacity: .7,
 		scale: false
 	});
 
