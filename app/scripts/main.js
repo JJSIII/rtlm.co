@@ -18,8 +18,7 @@ $(document).ready(function() {
 	// video background
 	if (Modernizr.touch) {
 		// mobile
-		console.log('fuck you');
-		$('.panel-home').css('/background-image','images/jellyfish.jpg');
+		$('.panel-home').css('background-image','url(images/jellyfish.jpg)');
 	} else {
 		// desktop
 		$('.panel-home').videoBG({
