@@ -19,4 +19,12 @@ $(document).ready(function() {
 	// mute video
 	$('video').prop('muted', true);
 
+	// center positioning
+
+	if (Modernizr.mq('only screen and (min-width: 500px)')) {
+		var elPositioning = $('.positioning');
+		var positioningHeight = elPositioning.outerHeight() / 2;
+		elPositioning.css('margin-top',-positioningHeight);
+	}
+
 });
