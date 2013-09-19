@@ -1,20 +1,42 @@
 'use strict';
 
+/*global Modernizr */
+
 $(document).ready(function() {
 
-	// video background
-	$('.panel-home').videoBG({
-		autoplay: true,
-		position: 'absolute',
-		zIndex: -1,
-		mp4: 'videos/jellyfish.mp4',
-		ogv: 'videos/jellyfish.ogv',
-		webm: 'videos/jellyfish.webm',
-		//poster: 'images/jellyfish.jpg',
-		fullscreen: true,
-		//opacity: .7,
-		scale: false
+	// reload page on window resize
+	function reloadPage() {
+	    window.location = window.location;
+	}
+
+	var resizeTimer;
+	$(window).resize(function() {
+	    clearTimeout(resizeTimer);
+	    resizeTimer = setTimeout(reloadPage, 200);
 	});
+
+	// video background
+	if (Modernizr.touch) {
+		// mobile
+		console.log('fuck you');
+		$('.panel-home').css('/background-image','images/jellyfish.jpg');
+	} else {
+		// desktop
+		$('.panel-home').videoBG({
+			autoplay: true,
+			position: 'absolute',
+			zIndex: -1,
+			mp4: 'videos/jellyfish.mp4',
+			ogv: 'videos/jellyfish.ogv',
+			webm: 'videos/jellyfish.webm',
+			poster: 'images/jellyfish.jpg',
+			fullscreen: true,
+			opacity: 0.4,
+			scale: false
+		});
+	}
+
+
 
 	// mute video
 	$('video').prop('muted', true);
