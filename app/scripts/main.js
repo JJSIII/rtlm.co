@@ -30,7 +30,7 @@ $(document).ready(function() {
 			webm: 'videos/jellyfish.webm',
 			poster: 'images/jellyfish.jpg',
 			fullscreen: true,
-			opacity: 0.6,
+			opacity: 0.8,
 			scale: false
 		});
 	}
@@ -39,7 +39,6 @@ $(document).ready(function() {
 	$('video').prop('muted', true);
 
 	// center positioning
-
 	if (Modernizr.mq('only screen and (min-width: 500px)')) {
 		var elPositioning = $('.positioning');
 		var positioningHeight = elPositioning.outerHeight() / 2.5;
@@ -56,5 +55,24 @@ $(document).ready(function() {
 	$('.md-close').click(function() {
 		$('.md-modal').removeClass('md-show');
 	});
+
+	// intro animation chaining
+	$('.logo').addClass('visible').delay(2000).queue(function(next) {
+		$('.logo').addClass('logo-top').delay(1000).queue(function(next) {
+			$('.positioning').addClass('visible').delay(1000).queue(function() {
+				$('.panel-home nav li').each(function(index) {
+					var myElem = $(this);
+					setTimeout(function() {
+						myElem.addClass('nav-visible');
+					}, 777 * (index + 1));
+				});
+			});
+			next();
+		});
+		next();
+	});
+
+
+	$('.videoBG').fadeIn(3000);
 
 });
