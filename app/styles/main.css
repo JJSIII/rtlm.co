@@ -243,6 +243,7 @@ body {
 
 .panel-home nav a::before,
 .panel-home nav a::after {
+  opacity: .4;
   position: absolute;
   width: 100%;
   left: 0;
@@ -272,14 +273,13 @@ body {
 
 .panel-home nav a:hover,
 .panel-home nav a:focus {
-  color: #fff;
+
 }
 
 .panel-home nav a:hover::before,
 .panel-home nav a:hover::after,
 .panel-home nav a:focus::before,
 .panel-home nav a:focus::after {
-  opacity: 0.5;
   width: 140px;
   left: 50%;
   margin-left: -70px;
