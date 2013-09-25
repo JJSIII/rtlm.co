@@ -36,7 +36,7 @@ $(document).ready(function() {
 	}
 
 	// mute video
-	$('video').prop('muted', true);
+	//$('video').prop('muted', true);
 
 	// center positioning
 	if (Modernizr.mq('only screen and (min-width: 500px)')) {
@@ -57,7 +57,7 @@ $(document).ready(function() {
 	});
 
 	// intro animation chaining
-	if (Modernizr.mq('only screen and (min-width: 500px)')) {
+	if (!Modernizr.touch) {
 		$('.logo').addClass('visible').delay(2000).queue(function(next) {
 			$('.logo').addClass('logo-top').delay(1000).queue(function(next) {
 				$('.positioning').addClass('visible').delay(1000).queue(function() {

@@ -111,19 +111,20 @@ body {
   width: 100%;
 }
 
-.positioning p {
+.positioning h1 {
   color: #fff;
-  font-family: "ambroise-std",serif;
+  font-family: "kepler-std-display",serif;
   font-size: 48px;
   font-style: normal;
   font-weight: 300;
+  line-height: 1.1em;
   text-align: center;
 }
 
 .positioning cite {
   color: #fff;
   display: block;
-  font-family: "ambroise-std",serif;
+  font-family: "kepler-std-display",serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 300;
@@ -133,15 +134,7 @@ body {
   text-align: center;
 }
 
-.positioning cite:before {
-  content: "– ";
-}
-
-  .positioning cite img {
-    vertical-align: middle;
-  }
-
-.positioning br {
+.positioning h1 br {
     display: inline-block;
     width: 1em;
   }
@@ -150,17 +143,16 @@ body {
 
   .positioning {
     opacity: 0;
-    padding: 0 40px;
+    padding: 0 80px;
     position: absolute;
     top: 50%;
   }
 
-  .positioning p {
-    font-size: 60px;
-    line-height: 1.1em;
+  .positioning h1 {
+    font-size: 66px;
   }
 
-  .positioning br {
+  .positioning h1 br {
     display: block;
   }
 
