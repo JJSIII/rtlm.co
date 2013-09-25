@@ -18,19 +18,19 @@ $(document).ready(function() {
 	// video background
 	if (Modernizr.touch) {
 		// mobile
-		$('.panel-home').css('background-image','url(images/jellyfish.jpg)');
+		$('.panel-home').css('background-image','url(images/forest.jpg)');
 	} else {
 		// desktop
 		$('.panel-home').videoBG({
 			autoplay: true,
 			position: 'absolute',
 			zIndex: -1,
-			mp4: 'videos/jellyfish.mp4',
-			ogv: 'videos/jellyfish.ogv',
-			webm: 'videos/jellyfish.webm',
-			poster: 'images/jellyfish.jpg',
+			mp4: 'videos/forest.mp4',
+			ogv: 'videos/forest.ogv',
+			webm: 'videos/forest.webm',
+			poster: 'images/forest.jpg',
 			fullscreen: true,
-			opacity: 0.8,
+			opacity: 0.5,
 			scale: false
 		});
 	}
@@ -57,22 +57,23 @@ $(document).ready(function() {
 	});
 
 	// intro animation chaining
-	$('.logo').addClass('visible').delay(2000).queue(function(next) {
-		$('.logo').addClass('logo-top').delay(1000).queue(function(next) {
-			$('.positioning').addClass('visible').delay(1000).queue(function() {
-				$('.panel-home nav li').each(function(index) {
-					var myElem = $(this);
-					setTimeout(function() {
-						myElem.addClass('nav-visible');
-					}, 777 * (index + 1));
+	if (Modernizr.mq('only screen and (min-width: 500px)')) {
+		$('.logo').addClass('visible').delay(2000).queue(function(next) {
+			$('.logo').addClass('logo-top').delay(1000).queue(function(next) {
+				$('.positioning').addClass('visible').delay(1000).queue(function() {
+					$('.panel-home nav li').each(function(index) {
+						var myElem = $(this);
+						setTimeout(function() {
+							myElem.addClass('nav-visible');
+						}, 400 * (index + 1));
+					});
 				});
+				next();
 			});
 			next();
 		});
-		next();
-	});
 
-
-	$('.videoBG').fadeIn(3000);
+		$('.videoBG').fadeIn(3000);
+	}
 
 });

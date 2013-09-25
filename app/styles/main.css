@@ -7,7 +7,7 @@
  }
 
 body {
-    background-color: #26292C;
+    background-color: #1b1e1a;
     color: #333;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     height: 100%;
@@ -128,13 +128,18 @@ body {
   font-style: normal;
   font-weight: 300;
   line-height: 2em;
-  opacity: .5;
+  margin-top: 12px;
+  opacity: .6;
   text-align: center;
 }
 
 .positioning cite:before {
   content: "– ";
 }
+
+  .positioning cite img {
+    vertical-align: middle;
+  }
 
 .positioning br {
     display: inline-block;
@@ -152,6 +157,7 @@ body {
 
   .positioning p {
     font-size: 60px;
+    line-height: 1.1em;
   }
 
   .positioning br {
@@ -180,9 +186,13 @@ body {
   display: block;
   margin: 30px auto 0 auto;
   max-width: 200px;
-  opacity: 0;
   position: relative;
   text-align: center;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
 
 .panel-home nav a {
@@ -192,7 +202,7 @@ body {
   font-style: normal;
   font-weight: 600;
   line-height: 1em;
-  opacity: .5;
+  opacity: .7;
   padding: 14px 6px;
   text-align: center;
   text-transform: uppercase;
@@ -215,14 +225,9 @@ body {
 @media (min-width: 500px) {
 
   .panel-home nav li {
-
+    opacity: 0;
     position: relative;
     top: 60px;
-    -webkit-transition: all 1s ease-out;
-    -moz-transition: all 1s ease-out;
-    -ms-transition: all 1s ease-out;
-    -o-transition: all 1s ease-out;
-    transition: all 1s ease-out;
   }
 
 }
@@ -380,7 +385,7 @@ body {
 /* Content styles */
 .md-content {
   color: #fff;
-  background: #26292C;
+  background: #1b1e1a;
   position: relative;
   border-radius: 3px;
   margin: 0 auto;
@@ -406,7 +411,7 @@ body {
 }
 
 .md-content > div p {
-  color: #cbd4dd;
+  color: #ccc;
   line-height: 1.5em;
   margin: 0;
   padding: 10px 0;
@@ -418,7 +423,7 @@ body {
 }
 
 .md-content > div ul li {
-  color: #cbd4dd;
+  color: #ccc;
   padding: 5px 0;
 }
 
