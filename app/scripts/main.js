@@ -46,14 +46,34 @@ $(document).ready(function() {
 	}
 
 	// launch modal
-	$('.panel-home .projects').click(function() {
-		$('.md-modal').addClass('md-show');
+
+	$('nav a').click(function() {
+		var clickedElIndex = ($(this).parent().index());
+		$('.md-modal:eq(' + clickedElIndex + ')').addClass('md-show');
 		$('html').addClass('md-perspective');
+
+		$('.logo').removeClass('visible').addClass('invisible');
+		$('.positioning').removeClass('visible').addClass('invisible');
+		$('nav').removeClass('visible').addClass('invisible');
+
+		if(clickedElIndex === 0) {
+			window.setTimeout(function() {
+				$('.md-modal:eq(' + clickedElIndex + ')').find('li').css('display','block').addClass('animated flipInY');
+			}, 1000);
+		}
+
 		event.preventDefault();
 	});
 
 	$('.md-close').click(function() {
 		$('.md-modal').removeClass('md-show');
+		$('html').removeClass('md-perspective');
+
+		$('.logo').removeClass('invisible').addClass('visible');
+		$('.positioning').removeClass('invisible').addClass('visible');
+		$('nav').removeClass('invisible').addClass('visible');
+
+		$('.md-modal:eq(0)').find('li').css('display','none').removeClass('animated flipInY');
 	});
 
 	// intro animation chaining
