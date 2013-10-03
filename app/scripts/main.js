@@ -4,6 +4,27 @@
 
 $(document).ready(function() {
 
+	// check url for email-sent and trigger click of contact if true
+	function getUrlVars()
+	{
+		var vars = [], hash;
+		var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+		for(var i = 0; i < hashes.length; i++)
+		{
+			hash = hashes[i].split('=');
+			vars.push(hash[0]);
+			vars[hash[0]] = hash[1];
+		}
+		return vars;
+	}
+
+	if(getUrlVars()['email-sent']) {
+		window.setTimeout(function() {
+			$('.nav-contact a')[0].click();
+			$('#modal-contact .success').show();
+		} ,2400);
+	}
+
 	// reload page on window resize
 	function reloadPage() {
 	    window.location = window.location;
